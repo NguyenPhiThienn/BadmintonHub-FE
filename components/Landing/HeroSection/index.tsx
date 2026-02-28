@@ -66,7 +66,7 @@ export function HeroSection() {
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/60 to-transparent" />
 
             <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-4 py-20 lg:px-8">
-                <div className="w-full flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-16">
+                <div className="w-full flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-8">
                     {/* Left: text content */}
                     <motion.div
                         className="flex flex-1 flex-col items-center text-center lg:items-start lg:text-left"
@@ -129,7 +129,7 @@ export function HeroSection() {
                         initial="hidden"
                         animate="visible"
                     >
-                        <div className="relative mx-auto max-w-sm overflow-hidden rounded-2xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur-md">
+                        <div className="relative mx-auto max-w-sm overflow-hidden rounded-2xl border border-white/10 bg-white/10 p-4 shadow-2xl backdrop-blur-md">
                             <div className="mb-4 flex items-center gap-3">
                                 <div className="flex h-12 w-12 text-primary items-center justify-center rounded-full bg-secondary">
                                     <Icon path={mdiTrendingUp} size={1.2} />
@@ -155,7 +155,7 @@ export function HeroSection() {
 
                 {/* Stats strip */}
                 <motion.div
-                    className="mt-20 grid w-full grid-cols-2 gap-6 lg:grid-cols-4"
+                    className="mt-20 grid w-full grid-cols-2 gap-8 lg:grid-cols-4"
                     initial="hidden"
                     animate="visible"
                 >
@@ -165,7 +165,7 @@ export function HeroSection() {
                         { value: "1M+", label: "Lượt đặt sân" },
                         { value: "98%", label: "Hài lòng" },
                     ].map((stat, i) => (
-                        <motion.div key={stat.label} custom={i} variants={statsStagger} className="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur-md">
+                        <motion.div key={stat.label} custom={i} variants={statsStagger} className="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/10 p-4 shadow-2xl backdrop-blur-md">
                             <span className="text-3xl font-bold text-accent lg:text-4xl">
                                 {stat.value}
                             </span>

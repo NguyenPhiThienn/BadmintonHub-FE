@@ -1,7 +1,18 @@
 "use client"
 
 import Image from "next/image"
+import { Icon } from "@/components/ui/mdi-icon"
+import { mdiAccountSupervisorCircle } from "@mdi/js"
 import { motion } from "framer-motion"
+
+const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i: number) => ({
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, delay: i * 0.1, ease: [0.25, 0.46, 0.45, 0.94] },
+    }),
+}
 
 const container = {
     hidden: {},
@@ -58,20 +69,20 @@ function Word({ children, className = "" }: { children: string; className?: stri
 
 export function AboutSection() {
     return (
-        <section className="relative overflow-hidden bg-background py-24 lg:py-36">
+        <section className="relative overflow-hidden bg-background py-20">
             <div className="relative mx-auto max-w-5xl px-4 lg:px-8">
-                {/* Label */}
                 <motion.div
-                    className="mb-12 flex items-center justify-center gap-2 lg:mb-16"
-                    initial={{ opacity: 0, y: 12 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.5 }}
+                    className="mb-12 flex flex-col items-center justify-center gap-2"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
                 >
-                    <span className="inline-block h-2 w-2 rounded-full bg-secondary" />
-                    <span className="text-sm font-medium tracking-wide text-primary">
+                    <motion.div custom={0} variants={fadeUp} className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-white shadow-lg shadow-primary/25">
+                        <Icon path={mdiAccountSupervisorCircle} size={1} />
+                    </motion.div>
+                    <motion.p custom={1} variants={fadeUp} className="text-xl font-semibold uppercase tracking-widest text-primary">
                         Về chúng tôi
-                    </span>
+                    </motion.p>
                 </motion.div>
 
                 {/* Large inline text with pill images */}

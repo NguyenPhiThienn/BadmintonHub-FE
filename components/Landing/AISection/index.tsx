@@ -49,7 +49,7 @@ const aiFeatures = [
 
 export function AISection() {
     return (
-        <section id="ai" className="relative overflow-hidden bg-background py-20 lg:py-28">
+        <section id="ai" className="relative overflow-hidden bg-background py-20">
             {/* SVG Background - Circuit board pattern */}
             <svg className="pointer-events-none absolute inset-0 h-full w-full" aria-hidden="true">
                 <defs>
@@ -66,18 +66,21 @@ export function AISection() {
 
             <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
                 <motion.div
-                    className="mx-auto max-w-2xl text-center"
+                    className="mx-auto max-w-3xl text-center flex flex-col gap-2"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                 >
-                    <motion.p custom={0} variants={fadeUp} className="text-sm font-semibold uppercase tracking-widest text-primary">
+                    <motion.div custom={0} variants={fadeUp} className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-white shadow-lg shadow-primary/25">
+                        <Icon path={mdiBrain} size={1} />
+                    </motion.div>
+                    <motion.p custom={0} variants={fadeUp} className="text-xl font-semibold uppercase tracking-widest text-primary">
                         Đột phá công nghệ
                     </motion.p>
-                    <motion.h2 custom={1} variants={fadeUp} className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                    <motion.h2 custom={1} variants={fadeUp} className="text-balance text-3xl font-bold tracking-tight text-primary sm:text-4xl lg:text-5xl">
                         Trí tuệ nhân tạo, sức mạnh vượt trội
                     </motion.h2>
-                    <motion.p custom={2} variants={fadeUp} className="mt-4 text-lg leading-relaxed text-muted-foreground">
+                    <motion.p custom={2} variants={fadeUp} className="text-xl leading-relaxed text-muted-foreground">
                         Công nghệ AI tiên tiến giúp tối ưu hóa mọi trải nghiệm từ người chơi đến chủ sân.
                     </motion.p>
                 </motion.div>

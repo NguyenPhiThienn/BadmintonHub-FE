@@ -18,7 +18,7 @@ const fadeUp = {
 
 export function CTASection() {
     return (
-        <section id="cta" className="relative overflow-hidden py-20 lg:py-28">
+        <section id="cta" className="relative overflow-hidden py-20">
             {/* Background image */}
             <Image
                 src="/images/cta-bg.jpg"
@@ -76,7 +76,7 @@ export function CTASection() {
                     </motion.div>
 
                     {/* Trust signals */}
-                    <motion.div custom={3} variants={fadeUp} className="mt-12 flex flex-wrap items-center justify-center gap-8 text-white/70">
+                    <motion.div custom={3} variants={fadeUp} className="mt-12 flex flex-wrap items-center justify-center gap-8 text-white/80">
                         <div className="flex items-center gap-2">
                             <Icon path={mdiShieldCheck} size={0.8} />
                             <span className="text-sm">Bảo mật toàn diện</span>

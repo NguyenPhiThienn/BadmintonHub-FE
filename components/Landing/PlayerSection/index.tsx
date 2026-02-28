@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Icon } from "@/components/ui/mdi-icon"
-import { mdiMapMarker, mdiStar, mdiClock, mdiMagnify, mdiCreation, mdiArrowRight, mdiCheckCircle } from "@mdi/js"
+import { mdiMap, mdiStar, mdiClock, mdiMagnify, mdiCreation, mdiArrowRight, mdiCheckCircle, mdiChevronRightCircleOutline } from "@mdi/js"
 import { motion } from "framer-motion"
 
 const fadeUp = {
@@ -67,45 +67,25 @@ const courts = [
 
 export function PlayerSection() {
     return (
-        <section id="player" className="relative overflow-hidden bg-[#f7faf4] py-24 lg:py-32">
-            {/* SVG Background */}
-            <svg className="pointer-events-none absolute inset-0 h-full w-full" aria-hidden="true">
-                <defs>
-                    <pattern id="player-dots" width="32" height="32" patternUnits="userSpaceOnUse">
-                        <circle cx="16" cy="16" r="1.5" className="fill-primary/5" />
-                    </pattern>
-                    <radialGradient id="player-glow" cx="50%" cy="0%">
-                        <stop offset="0%" className="stop-color-accent/10" />
-                        <stop offset="70%" className="stop-color-transparent" />
-                    </radialGradient>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#player-dots)" />
-                <rect width="100%" height="100%" fill="url(#player-glow)" />
-            </svg>
-
-            {/* Top wave separator */}
-            <svg className="pointer-events-none absolute -top-px left-0 right-0 h-20 text-background" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 1440 80">
-                <path d="M0,0 L1440,0 L1440,40 Q720,80 0,40 Z" fill="currentColor" />
-            </svg>
-
+        <section id="player" className="relative overflow-hidden bg-background py-20">
             <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
                 {/* Header with left alignment */}
                 <motion.div
-                    className="mx-auto max-w-3xl text-center"
+                    className="mx-auto max-w-3xl text-center flex flex-col gap-2"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                 >
-                    <motion.div custom={0} variants={fadeUp} className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/15 text-primary">
-                        <Icon path={mdiMapMarker} size={1} />
+                    <motion.div custom={0} variants={fadeUp} className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-white shadow-lg shadow-primary/25">
+                        <Icon path={mdiMap} size={1} />
                     </motion.div>
-                    <motion.p custom={1} variants={fadeUp} className="text-sm font-semibold uppercase tracking-widest text-primary">
+                    <motion.p custom={1} variants={fadeUp} className="text-xl font-semibold uppercase tracking-widest text-primary">
                         Dành cho người chơi
                     </motion.p>
-                    <motion.h2 custom={2} variants={fadeUp} className="mt-3 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+                    <motion.h2 custom={2} variants={fadeUp} className="text-balance text-3xl font-bold tracking-tight text-primary sm:text-4xl lg:text-5xl">
                         Tìm sân thông minh, đặt chỗ siêu nhanh
                     </motion.h2>
-                    <motion.p custom={3} variants={fadeUp} className="mt-5 text-lg leading-relaxed text-muted-foreground">
+                    <motion.p custom={3} variants={fadeUp} className="text-xl leading-relaxed text-muted-foreground">
                         Chỉ cần nhập vị trí, AI sẽ gợi ý sân tốt nhất cho bạn. Trải nghiệm đặt sân chưa bao giờ dễ dàng đến thế.
                     </motion.p>
                 </motion.div>
@@ -118,17 +98,16 @@ export function PlayerSection() {
                     whileInView="visible"
                     viewport={{ once: true }}
                 >
-                    <div className="relative overflow-hidden rounded-2xl border border-accent/20 bg-card p-2 shadow-lg shadow-accent/10">
+                    <div className="relative overflow-hidden rounded-xl border border-primary/50 bg-card p-2 shadow-lg shadow-primary/10">
                         <div className="flex items-center gap-3">
-                            <div className="flex flex-1 items-center gap-2 rounded-xl bg-accent/5 px-4 py-1">
-                                <Icon path={mdiMagnify} size={0.8} className="shrink-0 text-secondary" />
+                            <div className="flex flex-1 items-center rounded-md bg-secondary px-4 h-10">
+                                <Icon path={mdiMagnify} size={1} className="shrink-0 text-primary" />
                                 <Input
                                     placeholder="Nhập địa chỉ hoặc tên sân..."
-                                    className="border-0 bg-transparent text-base shadow-none focus-visible:ring-0"
-                                    readOnly
+                                    className="border-0 text-primary bg-transparent !text-lg shadow-none focus-visible:ring-0"
                                 />
                             </div>
-                            <Button variant="badminton" size="lg" className="shrink-0 rounded-xl px-6 bg-primary hover:bg-secondary text-white border-none">
+                            <Button size="lg">
                                 Tìm sân
                                 <Icon path={mdiArrowRight} size={0.8} />
                             </Button>
@@ -138,7 +117,7 @@ export function PlayerSection() {
 
                 {/* Court cards - redesigned */}
                 <motion.div
-                    className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+                    className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-50px" }}
@@ -158,7 +137,7 @@ export function PlayerSection() {
                                     fill
                                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                                <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent" />
 
                                 {court.aiSuggested && (
                                     <Badge variant="badminton" className="absolute left-4 top-4 gap-1 shadow-lg bg-primary border-none">
@@ -174,25 +153,25 @@ export function PlayerSection() {
                             </div>
 
                             {/* Card body */}
-                            <div className="p-5">
+                            <div className="p-4">
                                 <div className="flex items-start justify-between gap-2">
                                     <h3 className="text-lg font-semibold text-foreground">
                                         {court.name}
                                     </h3>
-                                    <div className="flex shrink-0 items-center gap-1 rounded-full bg-amber-50 px-2 py-0.5">
-                                        <Icon path={mdiStar} size={0.8} className="text-amber-400" />
+                                    <div className="flex shrink-0 items-center gap-1 rounded-full bg-amber-100 px-2 py-0.5">
+                                        <Icon path={mdiStar} size={0.8} className="text-amber-500" />
                                         <span className="text-sm font-semibold text-amber-700">{court.rating}</span>
-                                        <span className="text-xs text-amber-600/70">({court.reviews})</span>
+                                        <span className="text-xs font-semibold text-amber-700">({court.reviews})</span>
                                     </div>
                                 </div>
 
                                 <div className="mt-2 flex items-center gap-1.5 text-sm text-muted-foreground">
-                                    <Icon path={mdiMapMarker} size={0.8} className="shrink-0 text-secondary" />
+                                    <Icon path={mdiMap} size={0.8} />
                                     {court.address}
                                 </div>
 
                                 <div className="mt-2 flex items-center gap-1.5 text-sm text-muted-foreground">
-                                    <Icon path={mdiClock} size={0.8} className="shrink-0 text-secondary" />
+                                    <Icon path={mdiClock} size={0.8} />
                                     {court.time}
                                 </div>
 
@@ -201,9 +180,9 @@ export function PlayerSection() {
                                     {court.features.map((feature) => (
                                         <span
                                             key={feature}
-                                            className="inline-flex items-center gap-1 rounded-full bg-accent/8 px-2.5 py-0.5 text-xs font-medium text-primary"
+                                            className="inline-flex items-center gap-1 rounded-full bg-accent/20 px-2.5 py-0.5 text-sm font-medium text-primary"
                                         >
-                                            <Icon path={mdiCheckCircle} size={0.45} />
+                                            <Icon path={mdiCheckCircle} size={0.6} />
                                             {feature}
                                         </span>
                                     ))}
@@ -211,16 +190,16 @@ export function PlayerSection() {
 
                                 {/* Bottom action row */}
                                 <div className="mt-4 flex items-center justify-between border-t border-border/50 pt-4">
-                                    <span className="flex items-center gap-1 text-sm font-semibold text-secondary">
+                                    <span className="flex items-center gap-1 text-lg font-semibold text-primary">
                                         <span className="relative flex h-2 w-2">
-                                            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-secondary opacity-75" />
-                                            <span className="relative inline-flex h-2 w-2 rounded-full bg-secondary" />
+                                            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
+                                            <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
                                         </span>
                                         {court.available} sân trống
                                     </span>
-                                    <Button variant="badminton" size="sm" className="rounded-lg bg-primary hover:bg-secondary text-white border-none">
+                                    <Button>
                                         Đặt ngay
-                                        <Icon path={mdiArrowRight} size={0.8} />
+                                        <Icon path={mdiChevronRightCircleOutline} size={0.8} />
                                     </Button>
                                 </div>
                             </div>

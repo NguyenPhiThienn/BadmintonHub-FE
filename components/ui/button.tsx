@@ -5,7 +5,7 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-sm text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 cursor-pointer leading-none",
   {
     variants: {
       variant: {
@@ -15,14 +15,14 @@ const buttonVariants = cva(
         outline:
           'border bg-background shadow-xs hover:bg-accent/10 hover:text-primary border-border dark:bg-input/30 dark:border-input dark:hover:bg-input/50',
         secondary:
-          'bg-secondary text-white hover:bg-secondary/80 shadow-md',
+          'bg-secondary text-white hover:bg-secondary/80',
         accent:
-          'bg-accent text-white hover:bg-accent/80 shadow-md',
+          'bg-accent text-white hover:bg-accent/80',
         ghost:
           'hover:bg-secondary hover:text-primary dark:hover:bg-accent/50',
         link: 'text-primary underline-offset-4 hover:underline',
         badminton:
-          'bg-primary text-white hover:bg-secondary shadow-md hover:shadow-lg transition-all duration-300',
+          'bg-primary text-white hover:bg-secondary hover:shadow-lg transition-all duration-300',
         'outline-badminton':
           'border-primary/50 text-primary hover:bg-primary/5 hover:text-primary border',
         'ghost-badminton':

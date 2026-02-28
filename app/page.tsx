@@ -3,7 +3,6 @@ import { HeroSection } from "@/components/Landing/HeroSection"
 import { AboutSection } from "@/components/Landing/AboutSection"
 import { CoreValuesSection } from "@/components/Landing/CoreValuesSection"
 import { PlayerSection } from "@/components/Landing/PlayerSection"
-import { OwnerSection } from "@/components/Landing/OwnerSection"
 import { HowItWorksSection } from "@/components/Landing/HowItWorksSection"
 import { AISection } from "@/components/Landing/AISection"
 import { CTASection } from "@/components/Landing/CTASection"
@@ -17,7 +16,6 @@ export default function Home() {
       <AboutSection />
       <CoreValuesSection />
       <PlayerSection />
-      <OwnerSection />
       <HowItWorksSection />
       <AISection />
       <CTASection />

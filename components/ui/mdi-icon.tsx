@@ -1,4 +1,5 @@
 import MdiIcon from "@mdi/react"
+import { cn } from "@/lib/utils"
 
 interface MdiIconProps {
   path: string
@@ -17,7 +18,7 @@ export function Icon({ path, size = 1, className, color, title }: MdiIconProps) 
     <MdiIcon
       path={path}
       size={size}
-      className={className}
+      className={cn("block", className)}
       color={color}
       title={title}
     />

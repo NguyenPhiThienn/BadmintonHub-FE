@@ -45,22 +45,22 @@ const coreValues = [
         icon: mdiFlash,
         title: "Tốc độ",
         description: "Đặt sân chỉ trong 30 giây. Không cần gọi điện, không cần chờ đợi.",
-        accent: "text-secondary",
-        bg: "bg-secondary",
+        accent: "text-accent",
+        bg: "bg-accent",
     },
     {
         icon: mdiHandshakeOutline,
         title: "Kết nối",
         description: "Xây dựng cộng đồng cầu lông sôi động, kết nối người chơi và chủ sân.",
-        accent: "text-primary",
-        bg: "bg-primary",
+        accent: "text-accent",
+        bg: "bg-accent",
     },
     {
         icon: mdiShieldCheck,
         title: "Tin cậy",
         description: "Hệ thống bảo mật, thanh toán an toàn, thông tin minh bạch 100%.",
-        accent: "text-secondary",
-        bg: "bg-secondary",
+        accent: "text-accent",
+        bg: "bg-accent",
     },
 ]
 
@@ -102,52 +102,62 @@ const ownerBenefits = [
 
 export function CoreValuesSection() {
     return (
-        <section id="features" className="relative overflow-hidden bg-background py-24 lg:py-32">
-            {/* SVG Background - Organic blobs pattern */}
-            <svg className="pointer-events-none absolute inset-0 h-full w-full" aria-hidden="true">
-                <defs>
-                    <pattern id="hex-pattern" width="56" height="100" patternUnits="userSpaceOnUse" patternTransform="scale(1.5)">
-                        <path d="M28 66L0 50V16L28 0l28 16v34L28 66z" fill="none" className="stroke-secondary/5" strokeWidth="1" />
-                    </pattern>
-                    <radialGradient id="glow-1" cx="20%" cy="30%">
-                        <stop offset="0%" className="stop-color-accent/10" />
-                        <stop offset="100%" className="stop-color-transparent" />
-                    </radialGradient>
-                    <radialGradient id="glow-2" cx="80%" cy="70%">
-                        <stop offset="0%" className="stop-color-secondary/10" />
-                        <stop offset="100%" className="stop-color-transparent" />
-                    </radialGradient>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#hex-pattern)" />
-                <rect width="100%" height="100%" fill="url(#glow-1)" />
-                <rect width="100%" height="100%" fill="url(#glow-2)" />
-            </svg>
+        <section id="features" className="relative overflow-hidden bg-background py-20">
+            {/* SVG Background - Ultra-curvy organic blobs */}
+            <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+                <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" className="h-full w-full opacity-80" preserveAspectRatio="xMidYMid slice" style={{ overflow: 'visible' }}>
+                    <defs>
+                        <radialGradient id="blob-gradient-1" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stopColor="#141F1B" stopOpacity="0.4" />
+                            <stop offset="100%" stopColor="#141F1B" stopOpacity="0" />
+                        </radialGradient>
+                        <radialGradient id="blob-gradient-2" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stopColor="#141F1B" stopOpacity="0.4" />
+                            <stop offset="100%" stopColor="#141F1B" stopOpacity="0" />
+                        </radialGradient>
+                        <radialGradient id="blob-gradient-3" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stopColor="#141F1B" stopOpacity="0.3" />
+                            <stop offset="100%" stopColor="#141F1B" stopOpacity="0" />
+                        </radialGradient>
+                    </defs>
+                    <path
+                        d="M800,400C800,620,630,780,400,780C170,780,0,620,0,400C0,180,170,20,400,20C630,20,800,180,800,400Z"
+                        fill="url(#blob-gradient-2)"
+                        transform="translate(420, 220) scale(1.1)"
+                    />
+                    <path
+                        d="M600,300C600,480,470,580,300,580C130,580,0,480,0,300C0,120,130,20,300,20C470,20,600,120,600,300Z"
+                        fill="url(#blob-gradient-3)"
+                        transform="translate(80, 450) scale(1)"
+                    />
+                </svg>
+            </div>
 
             <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
                 {/* Section header */}
                 <motion.div
-                    className="mx-auto max-w-3xl text-center"
+                    className="mx-auto max-w-3xl text-center flex flex-col gap-2"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                 >
-                    <motion.div custom={0} variants={fadeUp} className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-white shadow-lg shadow-primary/25">
+                    <motion.div custom={0} variants={fadeUp} className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-white shadow-lg shadow-primary/25">
                         <Icon path={mdiLightbulbOn} size={1} />
                     </motion.div>
-                    <motion.p custom={1} variants={fadeUp} className="text-sm font-semibold uppercase tracking-widest text-primary">
+                    <motion.p custom={1} variants={fadeUp} className="text-xl font-semibold uppercase tracking-widest text-primary">
                         Giá trị cốt lõi
                     </motion.p>
-                    <motion.h2 custom={2} variants={fadeUp} className="mt-3 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+                    <motion.h2 custom={2} variants={fadeUp} className="text-balance text-3xl font-bold tracking-tight text-primary sm:text-4xl lg:text-5xl">
                         Lợi ích nhân đôi cho mọi người
                     </motion.h2>
-                    <motion.p custom={3} variants={fadeUp} className="mt-5 text-lg leading-relaxed text-muted-foreground">
+                    <motion.p custom={3} variants={fadeUp} className="text-xl leading-relaxed text-muted-foreground">
                         Dù bạn là người chơi hay chủ sân, BadmintonHub mang đến giải pháp toàn diện giúp nâng cao trải nghiệm cầu lông.
                     </motion.p>
                 </motion.div>
 
                 {/* Core values - horizontal cards */}
                 <motion.div
-                    className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
+                    className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-50px" }}
@@ -157,7 +167,7 @@ export function CoreValuesSection() {
                             key={value.title}
                             custom={i}
                             variants={scaleIn}
-                            className="group relative overflow-hidden rounded-2xl border border-accent/15 bg-card p-6 transition-all duration-500 hover:-translate-y-1 hover:border-secondary/30 hover:shadow-xl hover:shadow-accent/10"
+                            className="group relative overflow-hidden rounded-2xl border border-accent/15 bg-card p-4 transition-all duration-500 hover:-translate-y-1 hover:border-secondary/30 hover:shadow-xl hover:shadow-accent/10"
                         >
                             {/* Top accent line */}
                             <div className={`absolute inset-x-0 top-0 h-1 rounded-t-2xl ${value.bg}`} />
@@ -170,10 +180,10 @@ export function CoreValuesSection() {
                                 >
                                     <Icon path={value.icon} size={1} />
                                 </div>
-                                <h3 className="text-lg font-semibold text-foreground">
+                                <h3 className="text-xl font-semibold text-primary">
                                     {value.title}
                                 </h3>
-                                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                                <p className="mt-2 text-lg font-normal leading-relaxed text-muted-foreground">
                                     {value.description}
                                 </p>
                             </div>
@@ -182,7 +192,7 @@ export function CoreValuesSection() {
                 </motion.div>
 
                 {/* Two-column benefits */}
-                <div className="mt-24 grid gap-16 lg:grid-cols-2">
+                <div className="mt-24 grid gap-8 lg:grid-cols-2">
                     {/* Player column */}
                     <motion.div
                         initial="hidden"
@@ -197,17 +207,17 @@ export function CoreValuesSection() {
                                 height={340}
                                 className="h-56 w-full object-cover"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/30 to-transparent" />
-                            <div className="absolute bottom-0 left-0 right-0 p-6">
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                            <div className="absolute bottom-0 left-0 right-0 p-4">
                                 <div className="flex items-center gap-3">
-                                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
-                                        <Icon path={mdiAccountGroup} size={0.8} className="text-white" />
+                                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-primary backdrop-blur-sm">
+                                        <Icon path={mdiAccountGroup} size={0.8} />
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-bold text-white">
+                                        <h3 className="text-xl font-bold text-secondary">
                                             Dành cho Người chơi
                                         </h3>
-                                        <p className="text-sm text-white/70">Trải nghiệm đặt sân hoàn hảo</p>
+                                        <p className="text-lg text-white/80">Trải nghiệm đặt sân hoàn hảo</p>
                                     </div>
                                 </div>
                             </div>
@@ -219,16 +229,16 @@ export function CoreValuesSection() {
                                     key={benefit.title}
                                     custom={i + 1}
                                     variants={fadeUp}
-                                    className="group flex gap-4 rounded-xl border border-transparent bg-accent/5 p-5 transition-all duration-300 hover:border-accent/20 hover:bg-accent/10 hover:shadow-md"
+                                    className="group flex gap-4 rounded-xl border border-transparent bg-secondary p-4 transition-all duration-300"
                                 >
                                     <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary text-white shadow-md shadow-primary/20 transition-transform duration-300 group-hover:scale-110">
                                         <Icon path={benefit.icon} size={0.8} />
                                     </div>
                                     <div>
-                                        <h4 className="text-base font-semibold text-foreground">
+                                        <h4 className="text-xl font-semibold text-primary">
                                             {benefit.title}
                                         </h4>
-                                        <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                                        <p className="text-lg leading-relaxed text-muted-foreground">
                                             {benefit.description}
                                         </p>
                                     </div>
@@ -251,17 +261,17 @@ export function CoreValuesSection() {
                                 height={340}
                                 className="h-56 w-full object-cover"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/30 to-transparent" />
-                            <div className="absolute bottom-0 left-0 right-0 p-6">
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                            <div className="absolute bottom-0 left-0 right-0 p-4">
                                 <div className="flex items-center gap-3">
-                                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
-                                        <Icon path={mdiChartBar} size={0.8} className="text-white" />
+                                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-primary backdrop-blur-sm">
+                                        <Icon path={mdiChartBar} size={0.8} />
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-bold text-white">
+                                        <h3 className="text-xl font-bold text-secondary">
                                             Dành cho Chủ sân
                                         </h3>
-                                        <p className="text-sm text-white/70">Quản lý hiệu quả, tăng doanh thu</p>
+                                        <p className="text-lg text-white/80">Quản lý hiệu quả, tăng doanh thu</p>
                                     </div>
                                 </div>
                             </div>
@@ -273,16 +283,16 @@ export function CoreValuesSection() {
                                     key={benefit.title}
                                     custom={i + 1}
                                     variants={fadeUp}
-                                    className="group flex gap-4 rounded-xl border border-transparent bg-secondary/5 p-5 transition-all duration-300 hover:border-secondary/20 hover:bg-secondary/10 hover:shadow-md"
+                                    className="group flex gap-4 rounded-xl border border-transparent bg-secondary p-4 transition-all duration-300"
                                 >
-                                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-secondary text-white shadow-md shadow-secondary/20 transition-transform duration-300 group-hover:scale-110">
+                                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary text-white shadow-md shadow-primary/20 transition-transform duration-300 group-hover:scale-110">
                                         <Icon path={benefit.icon} size={0.8} />
                                     </div>
                                     <div>
-                                        <h4 className="text-base font-semibold text-foreground">
+                                        <h4 className="text-xl font-semibold text-primary">
                                             {benefit.title}
                                         </h4>
-                                        <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                                        <p className="text-lg leading-relaxed text-muted-foreground">
                                             {benefit.description}
                                         </p>
                                     </div>

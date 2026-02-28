@@ -42,7 +42,7 @@ const steps = [
 
 export function HowItWorksSection() {
     return (
-        <section className="relative overflow-hidden bg-[#f7faf4] py-24 lg:py-32">
+        <section className="relative overflow-hidden bg-background py-20">
             {/* SVG Background */}
             <svg className="pointer-events-none absolute inset-0 h-full w-full" aria-hidden="true">
                 <defs>
@@ -70,21 +70,21 @@ export function HowItWorksSection() {
 
             <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
                 <motion.div
-                    className="mx-auto max-w-3xl text-center"
+                    className="mx-auto max-w-3xl text-center flex flex-col gap-2"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                 >
-                    <motion.div custom={0} variants={fadeUp} className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-white shadow-lg shadow-primary/25">
+                    <motion.div custom={0} variants={fadeUp} className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-white shadow-lg shadow-primary/25">
                         <span className="text-lg font-bold">3</span>
                     </motion.div>
-                    <motion.p custom={1} variants={fadeUp} className="text-sm font-semibold uppercase tracking-widest text-primary">
+                    <motion.p custom={1} variants={fadeUp} className="text-xl font-semibold uppercase tracking-widest text-primary">
                         Cách thức hoạt động
                     </motion.p>
-                    <motion.h2 custom={2} variants={fadeUp} className="mt-3 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+                    <motion.h2 custom={2} variants={fadeUp} className="text-balance text-3xl font-bold tracking-tight text-primary sm:text-4xl lg:text-5xl">
                         3 bước đơn giản để bắt đầu
                     </motion.h2>
-                    <motion.p custom={3} variants={fadeUp} className="mt-5 text-lg leading-relaxed text-muted-foreground">
+                    <motion.p custom={3} variants={fadeUp} className="text-xl leading-relaxed text-muted-foreground">
                         Trải nghiệm mượt mà từ lúc đăng ký đến khi bước vào sân.
                     </motion.p>
                 </motion.div>
@@ -138,7 +138,7 @@ export function HowItWorksSection() {
                                 </div>
 
                                 {/* Content card */}
-                                <div className="w-full rounded-2xl border border-accent/10 bg-card p-6 transition-all duration-300 group-hover:border-secondary/25 group-hover:shadow-lg group-hover:shadow-accent/10">
+                                <div className="w-full rounded-2xl border border-accent/10 bg-card p-4 transition-all duration-300 group-hover:border-secondary/25 group-hover:shadow-lg group-hover:shadow-accent/10">
                                     <div className="mb-3 flex items-center justify-center gap-2">
                                         <Icon path={step.icon} size={0.8} className={`text-${step.color}`} />
                                         <h3 className="text-xl font-semibold text-foreground">
