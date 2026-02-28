@@ -71,7 +71,7 @@ export function AISection() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                 >
-                    <motion.div custom={0} variants={fadeUp} className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-white shadow-lg shadow-primary/25">
+                    <motion.div custom={0} variants={fadeUp} className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-secondary shadow-lg shadow-primary/25">
                         <Icon path={mdiBrain} size={1} />
                     </motion.div>
                     <motion.p custom={0} variants={fadeUp} className="text-xl font-semibold uppercase tracking-widest text-primary">
@@ -94,20 +94,20 @@ export function AISection() {
                     viewport={{ once: true, margin: "-50px" }}
                 >
                     <Image
-                        src="/images/ai-tech.jpg"
+                        src="/images/ai-tech.png"
                         alt="Công nghệ trí tuệ nhân tạo của BadmintonHub"
-                        width={960}
-                        height={400}
-                        className="h-56 w-full object-cover sm:h-72 lg:h-80"
+                        width={1000}
+                        height={1000}
+                        className="h-56 w-full object-cover sm:h-72 lg:h-96"
                     />
-                    <div className="pointer-events-none absolute inset-0 bg-primary/10" />
+                    <div className="pointer-events-none absolute inset-0 bg-black/20" />
                     <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-secondary/15" />
                     {/* Floating AI badge on image */}
                     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                         <div className="relative">
                             <div className="absolute inset-0 animate-ping rounded-full bg-secondary/20" />
                             <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-primary/80 shadow-2xl shadow-primary/40 backdrop-blur-sm">
-                                <Icon path={mdiBrain} size={1.5} className="text-white" />
+                                <Icon path={mdiBrain} size={1.5} className="text-secondary" />
                             </div>
                         </div>
                     </div>
@@ -125,13 +125,13 @@ export function AISection() {
                                 className="h-full border-accent/20 bg-primary/5 transition-all hover:border-secondary/40 hover:shadow-lg hover:shadow-primary/5"
                             >
                                 <CardHeader>
-                                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-white shadow-md">
-                                        <Icon path={feature.icon} size={0.8} />
+                                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-secondary shadow-md">
+                                        <Icon path={feature.icon} size={1} />
                                     </div>
-                                    <CardTitle className="text-base">{feature.title}</CardTitle>
+                                    <CardTitle className="text-xl text-primary">{feature.title}</CardTitle>
                                 </CardHeader>
                                 <CardContent>
-                                    <CardDescription className="text-sm leading-relaxed">
+                                    <CardDescription className="text-lg leading-relaxed">
                                         {feature.description}
                                     </CardDescription>
                                 </CardContent>

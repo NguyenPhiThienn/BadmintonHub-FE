@@ -82,7 +82,7 @@ export function HeroSection() {
                         <motion.h1
                             custom={1}
                             variants={fadeUp}
-                            className="max-w-2xl text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl flex flex-col gap-3"
+                            className="max-w-2xl text-4xl font-bold tracking-tight text-secondary sm:text-5xl lg:text-6xl flex flex-col gap-3"
                         >
                             <span>
                                 Đặt sân thông minh,{" "}
@@ -96,7 +96,7 @@ export function HeroSection() {
                         <motion.p
                             custom={2}
                             variants={fadeUp}
-                            className="mt-6 max-w-xl text-lg leading-relaxed text-white/80 lg:text-xl"
+                            className="mt-6 max-w-xl text-lg leading-relaxed text-secondary/80 lg:text-xl"
                         >
                             Giải pháp toàn diện để tìm sân và đặt chỗ nhanh chóng.
                             Tích hợp công nghệ AI giúp bạn tối ưu hóa trải nghiệm và kết nối đam mê cầu lông.
@@ -113,7 +113,7 @@ export function HeroSection() {
                                     <Icon path={mdiArrowRight} size={0.8} />
                                 </Link>
                             </Button>
-                            <Button variant="outline" size="xl" asChild className="border-white/30 bg-white/5 text-white hover:bg-white/15 hover:text-white backdrop-blur-sm">
+                            <Button variant="outline" size="xl" asChild className="border-white/30 bg-white/5 text-secondary hover:bg-white/15 hover:text-secondary backdrop-blur-sm">
                                 <Link href="#features">
                                     <Icon path={mdiPlay} size={0.8} />
                                     Xem cách hoạt động
@@ -124,19 +124,19 @@ export function HeroSection() {
 
                     {/* Right: floating stat card */}
                     <motion.div
-                        className="relative flex-1"
+                        className="relative"
                         variants={scaleIn}
                         initial="hidden"
                         animate="visible"
                     >
-                        <div className="relative mx-auto max-w-sm overflow-hidden rounded-2xl border border-white/10 bg-white/10 p-4 shadow-2xl backdrop-blur-md">
+                        <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/10 p-4 shadow-2xl backdrop-blur-md w-[400px]">
                             <div className="mb-4 flex items-center gap-3">
                                 <div className="flex h-12 w-12 text-primary items-center justify-center rounded-full bg-secondary">
                                     <Icon path={mdiTrendingUp} size={1.2} />
                                 </div>
                                 <div>
-                                    <p className="text-base font-semibold text-white/80">Lượt đặt hôm nay</p>
-                                    <p className="text-2xl font-bold text-white">+2,847</p>
+                                    <p className="text-base font-semibold text-secondary/80">Lượt đặt hôm nay</p>
+                                    <p className="text-2xl font-bold text-secondary">+2,847</p>
                                 </div>
                             </div>
                             <div className="flex gap-2 rotate-180">
@@ -169,7 +169,7 @@ export function HeroSection() {
                             <span className="text-3xl font-bold text-accent lg:text-4xl">
                                 {stat.value}
                             </span>
-                            <span className="mt-1 text-base text-white/80 font-semibold">{stat.label}</span>
+                            <span className="mt-1 text-base text-secondary/80 font-semibold">{stat.label}</span>
                         </motion.div>
                     ))}
                 </motion.div>

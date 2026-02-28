@@ -141,7 +141,7 @@ export function CoreValuesSection() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                 >
-                    <motion.div custom={0} variants={fadeUp} className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-white shadow-lg shadow-primary/25">
+                    <motion.div custom={0} variants={fadeUp} className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-secondary shadow-lg shadow-primary/25">
                         <Icon path={mdiLightbulbOn} size={1} />
                     </motion.div>
                     <motion.p custom={1} variants={fadeUp} className="text-xl font-semibold uppercase tracking-widest text-primary">
@@ -217,7 +217,7 @@ export function CoreValuesSection() {
                                         <h3 className="text-xl font-bold text-secondary">
                                             Dành cho Người chơi
                                         </h3>
-                                        <p className="text-lg text-white/80">Trải nghiệm đặt sân hoàn hảo</p>
+                                        <p className="text-lg text-secondary/80">Trải nghiệm đặt sân hoàn hảo</p>
                                     </div>
                                 </div>
                             </div>
@@ -231,7 +231,7 @@ export function CoreValuesSection() {
                                     variants={fadeUp}
                                     className="group flex gap-4 rounded-xl border border-transparent bg-secondary p-4 transition-all duration-300"
                                 >
-                                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary text-white shadow-md shadow-primary/20 transition-transform duration-300 group-hover:scale-110">
+                                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary text-secondary shadow-md shadow-primary/20 transition-transform duration-300 group-hover:scale-110">
                                         <Icon path={benefit.icon} size={0.8} />
                                     </div>
                                     <div>
@@ -271,7 +271,7 @@ export function CoreValuesSection() {
                                         <h3 className="text-xl font-bold text-secondary">
                                             Dành cho Chủ sân
                                         </h3>
-                                        <p className="text-lg text-white/80">Quản lý hiệu quả, tăng doanh thu</p>
+                                        <p className="text-lg text-secondary/80">Quản lý hiệu quả, tăng doanh thu</p>
                                     </div>
                                 </div>
                             </div>
@@ -285,7 +285,7 @@ export function CoreValuesSection() {
                                     variants={fadeUp}
                                     className="group flex gap-4 rounded-xl border border-transparent bg-secondary p-4 transition-all duration-300"
                                 >
-                                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary text-white shadow-md shadow-primary/20 transition-transform duration-300 group-hover:scale-110">
+                                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary text-secondary shadow-md shadow-primary/20 transition-transform duration-300 group-hover:scale-110">
                                         <Icon path={benefit.icon} size={0.8} />
                                     </div>
                                     <div>

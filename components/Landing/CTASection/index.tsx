@@ -49,11 +49,11 @@ export function CTASection() {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
             >
-                <div className="mx-auto max-w-2xl text-center">
-                    <motion.h2 custom={0} variants={fadeUp} className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-                        <span className="text-balance">Sẵn sàng trải nghiệm tương lai của cầu lông?</span>
+                <div className="mx-auto max-w-3xl text-center">
+                    <motion.h2 custom={0} variants={fadeUp} className="text-3xl font-bold tracking-tight text-secondary sm:text-4xl lg:text-5xl">
+                        Sẵn sàng trải nghiệm tương lai của cầu lông?
                     </motion.h2>
-                    <motion.p custom={1} variants={fadeUp} className="mt-6 text-lg leading-relaxed text-white/80">
+                    <motion.p custom={1} variants={fadeUp} className="mt-6 text-xl leading-relaxed text-secondary/80">
                         Đăng ký ngay hôm nay để nhận ưu đãi đặc biệt dành cho thành viên tiên phong.
                     </motion.p>
 
@@ -63,31 +63,31 @@ export function CTASection() {
                             <Input
                                 type="email"
                                 placeholder="Nhập email của bạn..."
-                                className="h-12 border-white/20 bg-white/10 text-white placeholder:text-white/50 focus-visible:border-white focus-visible:ring-white/30"
+                                className="h-12 border-white/20 bg-white/10 text-secondary placeholder:text-secondary/50 focus-visible:border-white focus-visible:ring-white/30 !text-lg"
                             />
-                            <Button variant="cta-badminton" size="xl" className="shrink-0 bg-secondary hover:bg-accent text-white border-none">
+                            <Button size="xl">
                                 Đăng ký ngay
-                                <Icon path={mdiArrowRight} size={0.8} className="ml-1" />
+                                <Icon path={mdiArrowRight} size={0.8} />
                             </Button>
                         </div>
-                        <p className="mt-3 text-xs text-white/50">
+                        <p className="mt-4 text-lg text-secondary/58">
                             Miễn phí. Không cần thẻ tín dụng. Hủy bất cứ lúc nào.
                         </p>
                     </motion.div>
 
                     {/* Trust signals */}
-                    <motion.div custom={3} variants={fadeUp} className="mt-12 flex flex-wrap items-center justify-center gap-8 text-white/80">
+                    <motion.div custom={3} variants={fadeUp} className="mt-12 flex flex-wrap items-center justify-center gap-8 text-secondary">
                         <div className="flex items-center gap-2">
-                            <Icon path={mdiShieldCheck} size={0.8} />
-                            <span className="text-sm">Bảo mật toàn diện</span>
+                            <Icon path={mdiShieldCheck} size={1} />
+                            <span className="text-lg">Bảo mật toàn diện</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <Icon path={mdiFlash} size={0.8} />
-                            <span className="text-sm">Cài đặt trong 30 giây</span>
+                            <Icon path={mdiFlash} size={1} />
+                            <span className="text-lg">Cài đặt trong 30 giây</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <Icon path={mdiHeart} size={0.8} />
-                            <span className="text-sm">50,000+ người dùng</span>
+                            <Icon path={mdiHeart} size={1} />
+                            <span className="text-lg">50,000+ người dùng</span>
                         </div>
                     </motion.div>
                 </div>

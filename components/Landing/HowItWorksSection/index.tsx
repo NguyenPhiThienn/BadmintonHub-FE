@@ -1,7 +1,7 @@
 "use client"
 
 import { Icon } from "@/components/ui/mdi-icon"
-import { mdiAccountPlus, mdiMagnify, mdiCheckCircle, mdiArrowRight } from "@mdi/js"
+import { mdiAccountPlus, mdiMagnify, mdiCheckCircle, mdiArrowRight, mdiListBoxOutline } from "@mdi/js"
 import { motion } from "framer-motion"
 
 const fadeUp = {
@@ -75,16 +75,16 @@ export function HowItWorksSection() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                 >
-                    <motion.div custom={0} variants={fadeUp} className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-white shadow-lg shadow-primary/25">
-                        <span className="text-lg font-bold">3</span>
+                    <motion.div custom={0} variants={fadeUp} className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-primary shadow-lg shadow-secobg-secondary/25">
+                        <Icon path={mdiListBoxOutline} size={1} />
                     </motion.div>
-                    <motion.p custom={1} variants={fadeUp} className="text-xl font-semibold uppercase tracking-widest text-primary">
+                    <motion.p custom={1} variants={fadeUp} className="text-xl font-semibold uppercase tracking-widest text-secondary/80">
                         Cách thức hoạt động
                     </motion.p>
-                    <motion.h2 custom={2} variants={fadeUp} className="text-balance text-3xl font-bold tracking-tight text-primary sm:text-4xl lg:text-5xl">
+                    <motion.h2 custom={2} variants={fadeUp} className="text-balance text-3xl font-bold tracking-tight text-secondary/90 sm:text-4xl lg:text-5xl">
                         3 bước đơn giản để bắt đầu
                     </motion.h2>
-                    <motion.p custom={3} variants={fadeUp} className="text-xl leading-relaxed text-muted-foreground">
+                    <motion.p custom={3} variants={fadeUp} className="text-xl leading-relaxed text-secondary/80">
                         Trải nghiệm mượt mà từ lúc đăng ký đến khi bước vào sân.
                     </motion.p>
                 </motion.div>
@@ -94,7 +94,7 @@ export function HowItWorksSection() {
                     {/* Connecting line - desktop only */}
                     <div className="absolute left-[16.67%] right-[16.67%] top-[52px] hidden h-px lg:block">
                         <div className="h-full w-full bg-gradient-to-r from-accent/40 via-secondary/40 to-primary/40" />
-                        <div className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-secondary" />
+                        <div className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/40" />
                     </div>
 
                     <motion.div
@@ -108,19 +108,19 @@ export function HowItWorksSection() {
                                 key={step.step}
                                 custom={i}
                                 variants={fadeUp}
-                                className="group relative flex flex-col items-center text-center"
+                                className="group relative flex h-full flex-col items-center text-center"
                             >
                                 {/* Step number circle */}
                                 <div className="relative mb-8">
                                     {/* Outer ring */}
                                     <div
-                                        className={`flex h-[104px] w-[104px] items-center justify-center rounded-full transition-transform duration-500 group-hover:scale-105 bg-${step.color}/10 border-2 border-${step.color}/30`}
+                                        className={`flex h-[104px] w-[104px] items-center justify-center rounded-full transition-transform duration-500 group-hover:scale-105 bg-accent/10 border-2 border-accent/30`}
                                     >
                                         {/* Inner circle */}
                                         <div
-                                            className={`flex h-20 w-20 flex-col items-center justify-center rounded-full text-white shadow-lg transition-transform duration-300 group-hover:scale-110 bg-${step.color} shadow-${step.color}/40`}
+                                            className={`flex h-20 w-20 flex-col items-center justify-center rounded-full text-secondary shadow-lg transition-transform duration-300 group-hover:scale-110 bg-accent shadow-accent/40`}
                                         >
-                                            <span className="text-xs font-semibold uppercase tracking-wider opacity-70">
+                                            <span className="text-sm font-semibold uppercase tracking-wider">
                                                 Bước
                                             </span>
                                             <span className="text-2xl font-bold leading-none">
@@ -128,25 +128,18 @@ export function HowItWorksSection() {
                                             </span>
                                         </div>
                                     </div>
-
-                                    {/* Arrow between steps - desktop only */}
-                                    {i < steps.length - 1 && (
-                                        <div className="absolute -right-10 top-1/2 hidden -translate-y-1/2 text-accent/40 lg:block">
-                                            <Icon path={mdiArrowRight} size={1} />
-                                        </div>
-                                    )}
                                 </div>
 
                                 {/* Content card */}
-                                <div className="w-full rounded-2xl border border-accent/10 bg-card p-4 transition-all duration-300 group-hover:border-secondary/25 group-hover:shadow-lg group-hover:shadow-accent/10">
+                                <div className="flex w-full flex-1 flex-col rounded-2xl border border-accent/10 bg-card p-4 transition-all duration-300 group-hover:border-secondary/25 group-hover:shadow-lg group-hover:shadow-accent/10">
                                     <div className="mb-3 flex items-center justify-center gap-2">
-                                        <Icon path={step.icon} size={0.8} className={`text-${step.color}`} />
-                                        <h3 className="text-xl font-semibold text-foreground">
+                                        <Icon path={step.icon} size={0.8} className="text-primary" />
+                                        <h3 className="text-xl font-semibold text-primary">
                                             {step.title}
                                         </h3>
                                     </div>
 
-                                    <p className="text-sm leading-relaxed text-muted-foreground">
+                                    <p className="text-base leading-relaxed text-muted-foreground">
                                         {step.description}
                                     </p>
 
@@ -155,9 +148,9 @@ export function HowItWorksSection() {
                                         {step.details.map((detail) => (
                                             <span
                                                 key={detail}
-                                                className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium bg-${step.color}/10 text-${step.color}`}
+                                                className="inline-flex items-center gap-1 rounded-full bg-accent/20 px-2.5 py-0.5 text-sm font-medium text-primary"
                                             >
-                                                <Icon path={mdiCheckCircle} size={0.45} />
+                                                <Icon path={mdiCheckCircle} size={0.6} />
                                                 {detail}
                                             </span>
                                         ))}

@@ -89,7 +89,7 @@ export function Header() {
                                     <Link href={link.href}>{link.label}</Link>
                                 </Button>
                             ))}
-                            <Button variant="badminton" className="mt-2 bg-primary hover:bg-secondary text-white" asChild>
+                            <Button variant="badminton" className="mt-2 bg-primary hover:bg-secondary text-secondary" asChild>
                                 <Link href="#cta" onClick={() => setMobileOpen(false)}>Bắt đầu ngay</Link>
                             </Button>
                         </div>

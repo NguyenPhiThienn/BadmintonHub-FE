@@ -14,11 +14,11 @@ const badgeVariants = cva(
         secondary:
           'border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/80',
         destructive:
-          'border-transparent bg-destructive text-white [a&]:hover:bg-destructive/80 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60',
+          'border-transparent bg-destructive text-secondary [a&]:hover:bg-destructive/80 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60',
         outline:
           'text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground border-accent/40 bg-accent/15 text-secondary',
         badminton:
-          'border-transparent bg-brand-dark text-white [a&]:hover:bg-brand-mid',
+          'border-transparent bg-brand-dark text-secondary [a&]:hover:bg-brand-mid',
         'outline-badminton':
           'border-brand-light/50 text-brand-dark bg-brand-light/10 dark:border-brand-mid dark:text-brand-light dark:bg-brand-dark/30',
       },

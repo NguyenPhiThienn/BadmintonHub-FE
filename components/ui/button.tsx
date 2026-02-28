@@ -11,18 +11,18 @@ const buttonVariants = cva(
       variant: {
         default: 'bg-primary text-primary-foreground hover:bg-primary/80',
         destructive:
-          'bg-destructive text-white hover:bg-destructive/80 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60',
+          'bg-destructive text-secondary hover:bg-destructive/80 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60',
         outline:
           'border bg-background shadow-xs hover:bg-accent/10 hover:text-primary border-border dark:bg-input/30 dark:border-input dark:hover:bg-input/50',
         secondary:
-          'bg-secondary text-white hover:bg-secondary/80',
+          'bg-secondary text-secondary hover:bg-secondary/80',
         accent:
-          'bg-accent text-white hover:bg-accent/80',
+          'bg-accent text-secondary hover:bg-accent/80',
         ghost:
           'hover:bg-secondary hover:text-primary dark:hover:bg-accent/50',
         link: 'text-primary underline-offset-4 hover:underline',
         badminton:
-          'bg-primary text-white hover:bg-secondary hover:shadow-lg transition-all duration-300',
+          'bg-primary text-secondary hover:bg-secondary hover:shadow-lg transition-all duration-300',
         'outline-badminton':
           'border-primary/50 text-primary hover:bg-primary/5 hover:text-primary border',
         'ghost-badminton':
@@ -33,7 +33,7 @@ const buttonVariants = cva(
       size: {
         default: 'h-9 px-4 py-2 has-[>svg]:px-3 text-base',
         sm: 'h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 text-sm',
-        lg: 'h-10 rounded-md px-6 has-[>svg]:px-4',
+        lg: 'h-10 rounded-md px-4 has-[>svg]:px-4',
         xl: 'h-12 rounded-lg px-8 text-base has-[>svg]:px-5',
         icon: 'size-9',
         'icon-sm': 'size-8',
