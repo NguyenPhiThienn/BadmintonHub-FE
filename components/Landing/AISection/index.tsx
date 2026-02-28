@@ -87,7 +87,7 @@ export function AISection() {
 
                 {/* AI Technology visual */}
                 <motion.div
-                    className="relative mx-auto my-12 max-w-3xl overflow-hidden rounded-2xl shadow-2xl shadow-primary/15"
+                    className="relative mx-auto my-12 max-w-4xl overflow-hidden rounded-2xl shadow-2xl shadow-primary/15"
                     variants={scaleIn}
                     initial="hidden"
                     whileInView="visible"
@@ -98,7 +98,7 @@ export function AISection() {
                         alt="Công nghệ trí tuệ nhân tạo của BadmintonHub"
                         width={1000}
                         height={1000}
-                        className="h-56 w-full object-cover sm:h-72 lg:h-96"
+                        className="w-full object-cover h-[430px]"
                     />
                     <div className="pointer-events-none absolute inset-0 bg-black/20" />
                     <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-secondary/15" />
